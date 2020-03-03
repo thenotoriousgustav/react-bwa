@@ -41,7 +41,7 @@ function CheckDiscount(props){
   }
   else if(isDiscount === "Coming"){
     return(
-      <p>Coming soon Disocunt 40%</p>
+      <p>Coming soon Disocunt</p>
     );
   }
   else{
