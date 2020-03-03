@@ -8,7 +8,17 @@ function App() {
   return (
     <div className="Parentbox">
       <FotoProduct/>
-      <ProductInfo isDiscount="Yes" Category="RUNNING" Tittle="Ultraboost 20 Shoes"/>
+      <ProductInfo 
+      isDiscount="Yes"
+      Category="RUNNING" 
+      Tittle="Ultraboost 20 Shoes" 
+      Price="IDR 3.000.000" 
+      Info=" The Ultraboost was revolutionary when it was released in 2015.
+      Runners raved about the comfort and responsiveness of the midsole cushioning.
+      These adidas Ultraboost 20 Shoes continue that tradition.
+      Feel supported in the foot-hugging reinforced knit upper.
+      Responsive cushioning adds energy to your stride.
+      "/>
       <ReviewItems/>
     </div>
   );
@@ -42,7 +52,7 @@ function CheckDiscount(props){
 }
 
 function ProductInfo(props) {
-  const { Category, Tittle, isDiscount } = props;
+  const { Category, Tittle, isDiscount, Price, Info } = props;
   const benefits = ["Locked-in feel", "Lace closure", "Responsive Boost midsole"];
   const listBenefits = benefits.map((itemsBenefits) =>
     <li key={itemsBenefits}>{itemsBenefits}</li>
@@ -52,15 +62,9 @@ function ProductInfo(props) {
       <div className="Deskripsi">
         <p className="Category">{ Category }</p>
         <h1 className="Tittle">{ Tittle }</h1>
-        <p className="Price">IDR 3.000.000</p>
-        <CheckDiscount isDiscount={isDiscount} discount={50}/>
-        <p className="Info">
-        The Ultraboost was revolutionary when it was released in 2015.
-        Runners raved about the comfort and responsiveness of the midsole cushioning.
-        These adidas Ultraboost 20 Shoes continue that tradition.
-        Feel supported in the foot-hugging reinforced knit upper.
-        Responsive cushioning adds energy to your stride.
-        </p>
+        <p className="Price">{ Price }</p>
+        <CheckDiscount isDiscount={ isDiscount } discount={50}/>
+        <p className="Info">{ Info }</p>
         <ul>
           {listBenefits}
         </ul>
